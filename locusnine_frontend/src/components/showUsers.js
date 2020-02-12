@@ -41,6 +41,7 @@ export default function ShowUsers(props) {
             }
             return response.error;
         }).then((responseJson) => {
+            responseJson=responseJson.reverse();
             setRows(responseJson);
             props.onDataFetched();
         }).catch((error) => console.log(error));
